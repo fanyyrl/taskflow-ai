@@ -29,7 +29,7 @@ export default defineConfig(({ mode }) => {
               } catch {
                 body = null;
               }
-              const out = await handleAi(body, env.GEMINI_API_KEY, env.GEMINI_MODEL);
+              const out = await handleAi(body, env.VITE_GEMINI_API_KEY, env.VITE_GEMINI_MODEL);
               res.statusCode = out.status;
               res.setHeader("Content-Type", "application/json");
               res.end(JSON.stringify(out.json));
