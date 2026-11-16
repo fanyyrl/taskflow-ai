@@ -117,6 +117,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(405).json({ error: "Method not allowed" });
     return;
   }
-  const out = await handleAi(req.body, process.env.GEMINI_API_KEY, process.env.GEMINI_MODEL);
+  const out = await handleAi(req.body, process.env.VITE_GEMINI_API_KEY, process.env.VITE_GEMINI_MODEL);
   res.status(out.status).json(out.json);
 }
